@@ -60,7 +60,15 @@ st.write(
 
 # Skill Demand
 
-skill_demand = get_skill_demand(jobs["extracted_skills"])
+st.markdown("### 🎓 Select Target Role")
+selected_role = st.selectbox(
+    "Choose a job role",
+    jobs["job_title"].unique()
+)
+
+
+role_jobs = jobs[jobs["job_title"] == selected_role]
+skill_demand = get_skill_demand(role_jobs["extracted_skills"])
 
 demand_df = pd.DataFrame(
     skill_demand.items(),
@@ -79,6 +87,8 @@ fig, ax = plt.subplots()
 ax.bar(demand_df["Skill"], demand_df["Demand"])
 plt.xticks(rotation=45)
 st.pyplot(fig)
+
+
 
 
 # User Input
@@ -107,10 +117,7 @@ if user_skills:
         if invalid_input_skills:
             st.warning(f"⚠️ Ignored invalid skills: {', '.join(invalid_input_skills)}")
 
-        missing_skills = get_missing_skills(
-            market_skills=demand_df["Skill"].tolist(),
-            user_skills=valid_input_skills
-        )
+        missing_skills = get_missing_skills(skill_demand, valid_input_skills)
 
         st.markdown("### 🎯 Skills You Should Learn Next")
         if missing_skills:
