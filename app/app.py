@@ -1,21 +1,18 @@
 import sys
 import os
-
-# Get absolute path of project root
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-# Add project root to Python path
-if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
-
-
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+
 from utils.skill_analysis import get_skill_demand, get_missing_skills
 
-# -----------------------------
+
 # Load Data
 
 data_path = os.path.join(PROJECT_ROOT, "data")
@@ -24,7 +21,7 @@ jobs = pd.read_csv(os.path.join(data_path, "job_descriptions.csv"))
 skills_df = pd.read_csv(os.path.join(data_path, "skill_dictionary.csv"))
 
 
-# -----------------------------
+
 # Text Cleaning
 
 import re
@@ -36,7 +33,7 @@ def clean_text(text):
 
 jobs["clean_description"] = jobs["description"].apply(clean_text)
 
-# -----------------------------
+
 # Skill Extraction
 
 skill_list = skills_df["skill"].tolist()
@@ -46,7 +43,7 @@ def extract_skills(text):
 
 jobs["extracted_skills"] = jobs["clean_description"].apply(extract_skills)
 
-# -----------------------------
+
 # Streamlit UI
 
 st.set_page_config(page_title="SkillLens", layout="centered")
@@ -58,7 +55,7 @@ st.write(
     "Analyze job descriptions and find out which skills you should learn next."
 )
 
-# -----------------------------
+
 # Skill Demand
 
 skill_demand = get_skill_demand(jobs["extracted_skills"])
@@ -71,7 +68,7 @@ demand_df = pd.DataFrame(
 st.markdown("### 📊 Market Skill Demand")
 st.dataframe(demand_df)
 
-# -----------------------------
+
 # Visualization
 
 st.markdown("### 📈 Skill Demand Chart")

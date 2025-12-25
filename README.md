@@ -39,21 +39,25 @@ SkillLens-Ai/
 
 ## ▶️ How to Run the Project
 
-## 1️⃣ Clone the repository
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/vrp17/skilllens-ai.git
 cd skilllens-ai
-
-2️⃣ Create and activate virtual environment
+```
+### 2️⃣ Create and activate virtual environment
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-3️⃣ Install required dependencies
+### 3️⃣ Install required dependencies
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Run the Streamlit application
+### 4️⃣ Run the Streamlit application
+```bash
 streamlit run app/app.py
-
 
 The application will open automatically in your browser at:
 
