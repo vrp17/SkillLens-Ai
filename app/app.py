@@ -98,6 +98,8 @@ user_skills = st.text_input(
     "Enter your skills (comma separated)",
     placeholder="python, sql"
 )
+st.caption("Examples: python, java, sql, react, docker, aws")
+
 
 missing_skills = []
 
