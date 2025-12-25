@@ -20,6 +20,8 @@ data_path = os.path.join(PROJECT_ROOT, "data")
 jobs = pd.read_csv(os.path.join(data_path, "job_descriptions.csv"))
 skills_df = pd.read_csv(os.path.join(data_path, "skill_dictionary.csv"))
 
+# Valid skills set (for validation)
+VALID_SKILLS = set(skills_df["skill"].str.lower().tolist())
 
 
 # Text Cleaning
@@ -87,16 +89,34 @@ user_skills = st.text_input(
     placeholder="python, sql"
 )
 
+missing_skills = []
+
+
 if user_skills:
     user_skill_list = [s.strip().lower() for s in user_skills.split(",")]
 
-    missing_skills = get_missing_skills(
-        market_skills=demand_df["Skill"].tolist(),
-        user_skills=user_skill_list
-    )
+    # Separate valid and invalid skills
+    valid_input_skills = [s for s in user_skill_list if s in VALID_SKILLS]
+    invalid_input_skills = [s for s in user_skill_list if s not in VALID_SKILLS]
 
-    st.markdown("### 🎯 Skills You Should Learn Next")
-    if missing_skills:
-        st.success(", ".join(missing_skills))
+    if not valid_input_skills:
+        st.error("❌ Please enter at least one valid technical skill.")
+        st.info(f"Valid skills include: {', '.join(sorted(list(VALID_SKILLS))[:8])} ...")
+
     else:
-        st.success("You already have all required skills! 🎉")
+        if invalid_input_skills:
+            st.warning(f"⚠️ Ignored invalid skills: {', '.join(invalid_input_skills)}")
+
+        missing_skills = get_missing_skills(
+            market_skills=demand_df["Skill"].tolist(),
+            user_skills=valid_input_skills
+        )
+
+        st.markdown("### 🎯 Skills You Should Learn Next")
+        if missing_skills:
+            st.success(", ".join(missing_skills))
+        else:
+            st.success("You already have all required skills! 🎉")
+
+
+   
