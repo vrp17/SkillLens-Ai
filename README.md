@@ -27,13 +27,14 @@ learn next based on real job market data.
 ---
 
 ## 📂 Project Structure
+```bash
 SkillLens-Ai/
 ├── app/ # Streamlit application
 ├── data/ # Job descriptions & skill dictionary
 ├── notebooks/ # Data analysis & experimentation
 ├── utils/ # Reusable Python modules
 └── requirements.txt
-
+```
 
 ---
 
