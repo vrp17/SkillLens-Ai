@@ -1,39 +1,54 @@
-skill
-python
-sql
-excel
-power bi
-tableau
-statistics
-machine learning
-deep learning
-data visualization
-pandas
-numpy
-java
-cpp
-c++
-c
-spring boot
-hibernate
-data structures
-algorithms
-oop
-javascript
-typescript
-react
-node js
-html
-css
-git
-docker
-kubernetes
-aws
-azure
-gcp
-linux
-bash
-rest api
-flask
-django
-fastapi
+skill,category,level
+python,programming,core
+java,programming,core
+cpp,programming,core
+c,programming,core
+javascript,programming,core
+typescript,programming,intermediate
+
+sql,databases,core
+mysql,databases,intermediate
+postgresql,databases,intermediate
+mongodb,databases,intermediate
+redis,databases,advanced
+
+data structures,cs fundamentals,core
+algorithms,cs fundamentals,core
+oop,cs fundamentals,core
+system design,cs fundamentals,advanced
+
+pandas,data science,core
+numpy,data science,core
+statistics,data science,core
+data visualization,data science,intermediate
+machine learning,data science,intermediate
+deep learning,data science,advanced
+nlp,data science,advanced
+
+excel,analytics,core
+power bi,analytics,intermediate
+tableau,analytics,intermediate
+
+html,frontend,core
+css,frontend,core
+react,frontend,intermediate
+next js,frontend,advanced
+
+node js,backend,intermediate
+spring boot,backend,intermediate
+hibernate,backend,intermediate
+flask,backend,core
+django,backend,intermediate
+fastapi,backend,intermediate
+rest api,backend,core
+
+git,devops,core
+docker,devops,intermediate
+kubernetes,devops,advanced
+ci cd,devops,intermediate
+
+aws,cloud,intermediate
+azure,cloud,intermediate
+gcp,cloud,intermediate
+linux,cloud,core
+bash,cloud,core

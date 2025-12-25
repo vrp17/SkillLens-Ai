@@ -1,11 +1,27 @@
 job_id,job_title,description
-1,Data Analyst,"Python SQL Excel Power BI Tableau statistics data visualization"
-2,Data Scientist,"Python SQL machine learning deep learning pandas numpy statistics"
-3,ML Engineer,"Python machine learning deep learning docker kubernetes aws"
-4,Backend Developer,"Java Spring Boot Hibernate REST API SQL microservices"
-5,Software Engineer,"Java C++ data structures algorithms OOP system design"
-6,Frontend Developer,"JavaScript TypeScript React HTML CSS REST API"
-7,Full Stack Developer,"JavaScript React Node JS SQL REST API Docker"
-8,Cloud Engineer,"AWS Azure GCP Docker Kubernetes Linux"
-9,DevOps Engineer,"Linux Docker Kubernetes CI CD AWS scripting"
-10,Python Developer,"Python Flask Django FastAPI SQL REST API"
+1,Data Analyst,"python sql excel statistics data visualization power bi tableau"
+2,Senior Data Analyst,"python sql statistics data visualization power bi tableau machine learning"
+3,Data Scientist,"python sql pandas numpy statistics machine learning"
+4,Senior Data Scientist,"python sql machine learning deep learning nlp statistics"
+5,ML Engineer,"python machine learning deep learning docker kubernetes aws"
+6,AI Engineer,"python deep learning nlp machine learning cloud"
+
+7,Backend Developer,"java spring boot hibernate rest api sql"
+8,Senior Backend Developer,"java spring boot system design microservices docker sql"
+9,Software Engineer,"java cpp data structures algorithms oop"
+10,Senior Software Engineer,"java cpp data structures algorithms system design"
+
+11,Frontend Developer,"javascript html css react"
+12,Senior Frontend Developer,"javascript typescript react next js performance optimization"
+
+13,Full Stack Developer,"javascript react node js sql rest api"
+14,Senior Full Stack Developer,"javascript react node js system design docker"
+
+15,DevOps Engineer,"linux docker kubernetes ci cd aws"
+16,Senior DevOps Engineer,"linux docker kubernetes aws system reliability"
+
+17,Cloud Engineer,"aws azure gcp linux docker"
+18,Senior Cloud Engineer,"aws azure gcp kubernetes system design"
+
+19,Python Developer,"python flask django fastapi sql"
+20,Senior Python Developer,"python fastapi system design async programming"
